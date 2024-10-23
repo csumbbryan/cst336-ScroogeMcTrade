@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+    <div class="centeredFrame">
+      <span id="welcomeMessage">Welcome <%= user.firstName %> <%= user.lastName %></span>
+    </div>
+    <div class="columnFrame">
+      <div><span id="searchMessage">Search for Stock or Index Funds:</span></div>
+      <div><form action="/stockSearchResults" method="POST">
+        <label for="search">Stock Search:</label>
+        <input type="text" id="searchInput" name="searchDescription" required><br>
+        <button type="submit">Submit</button>
+      </form></div>
+    </div>
+
+    <% if (typeof bestMatches != "undefined") { %>
+      <div class="columnFrame">
+        <% for(var i = 0; i < bestMatches.length; i++) { %>
+          <div class="inline"><strong>Symbol:</strong>&nbsp
+          <form action="/stockDataResults" method="post">
+              <button type="submit" name="symbol" value="<%=bestMatches[i]["1. symbol"]%>" class="btn-link"> <%=bestMatches[i]["1. symbol"]%></button>
+          </form></div>
+          <div class="inline"><strong>Name:</strong> &nbsp <%=bestMatches[i]["2. name"]%></div><br>
+        <% } %>
+      </div>
+    <% } %>
+  <%- include('partials/footer') %>

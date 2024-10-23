@@ -1,0 +1,77 @@
+<%- include('partials/header') %>
+  <div class="standardFrame">
+    <% if (database.length == 0) { %>
+      You don't own any stocks. Go buy some!
+    <% } else { %>
+      <% //console.log("stockValueTotal: ", stockValueTotal); %>
+      <% //console.log("balance: ", balance); %>
+      <div class="frameElement">
+        Total Account Value: <br> <span class="dollarBlack"><%= formatCurrency(parseFloat(stockValueTotal.replace(",", ""))+parseFloat(balance)) %></span>
+      </div>
+      <div class="frameElement">
+        Stock Assets: <br> <span class="dollarBlack"><%= formatCurrency(stockValueTotal) %></span>
+      </div>
+      <div class="frameElement">
+        Account Balance: <br> <span class="dollarBlack"><%= formatCurrency(balance) %></span>
+      </div>
+        <div class="frameElement">
+          Total Gain: <br> <span class="dollar"><%=formatCurrency(gainLossTotal)%></span>
+        </div>  
+    </div>
+    <div id="stockTable" class="tableContainer">
+        <table class="standard">
+          <tr class="t_headers">
+            <td>Symbol</td>
+            <td>Company Name</td>
+            <td>Quantity</td>
+            <td>Price</td>
+            <td>Price Change $</td>
+            <td>Price Change %</td>
+            <td>Asset Value</td>
+            <td>Day Change $</td>
+            <td>Day Change %</td>
+            <td>Cost Basis</td>
+            <td>Gain Loss</td>
+            <td>Buy / Sell</td>
+          </tr>
+          <tr class="t_entry">
+          <% database.forEach((element) => { %>
+          <tr class="t_entry">
+            <% for (let key in element) { %>
+              <% if(key == "currentPrice" || key == "assetValue" || key == "costBasis") { %>
+                <td class="dollarBlack"><%= formatCurrency(element[key])%></td>
+              <% } else if(key == "priceChangeDol" || key == "dayChangeDol" || key == "gainLoss") { %>
+                <td class="dollar"><%= formatCurrency(element[key])%></td>
+              <% } else if(key == "priceChangePer" || key == "dayChangePer") { %>
+                <td class="percentage"><%= element[key]%></td>
+              <% } else if(key == "symbol") {%>
+                <td><a href="/stockInfo?symbol=<%= element[key] %>"><%= element[key] %></a>
+              <% } else {%>
+                <td><%= element[key]%></td>
+              <% } %>
+            <% } %>
+              <td><form action="/transactStock" method="post">
+                <button type="submit" name="symbol" value="<%=element["symbol"]%>" class="btn-link"><%=element["symbol"]%>
+                </button>
+              </form></td>
+          
+          </tr>
+          <% }); %>
+          <tr class = "t_footer">
+            <td>TOTAL</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="dollarBlack"><%=stockValueTotal%></td>
+            <td class="dollar"><%=formatCurrency(dayChangeDolTotal)%></td>
+            <td class="percentage"><%=dayChangePerTotal%></td>
+            <td class="dollarBlack"><%=formatCurrency(costBasisTotal)%></td>
+            <td class="dollar"><%=formatCurrency(gainLossTotal)%></td>
+            <td></td>
+          </tr>
+        </table>
+      <% } %>
+    </div>
+        <%- include('partials/footer') %>

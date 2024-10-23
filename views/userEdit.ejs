@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+	<div class="halfFrame">
+
+		<div class="frameElementCentered">
+			<h3>Edit Account Information:</h3>
+			<form method="post" action="/userEdit" id="form">
+				<input type="hidden" name="userName" id="userName" value="<%= user.userName %>"></input>
+				<div class="formRow">
+					<div class="formLabel">Password:</div>
+					<input name="pw" class="formInput" id="pw" type="password" value="     "></input>
+				</div>
+				<div class="formRow">
+					<div class="formLabel">Repeat password:</div>
+					<input name="pw2" class="formInput" id="pw2" type="password" value="     "></input>
+				</div>
+				<br>
+				<div class="formRow">
+					<div class="formLabel">First name:</div>
+					<input name="firstName" class="formInput" id="firstName" value="<%= user.firstName %>"></input>
+				</div>
+				<div class="formRow">
+					<div class="formLabel">Last name:</div>
+					<input name="lastName" class="formInput" id="lastName" value="<%= user.lastName %>"></input>
+				</div>
+				<button type="button" id="submitButton">Update</button>
+				<div class="error" id="error">
+				<br>
+				<% if (typeof error != "undefined") { %>
+					<%= error %>
+				<% } %>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="/js/userRegister.js" defer></script>
+<%- include('partials/footer') %>

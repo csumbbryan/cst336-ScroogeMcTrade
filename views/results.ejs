@@ -1,0 +1,12 @@
+<h1>Form Data Submitted</h1>
+  <p>Search Description: <%= searchDescription %></p>
+  <% for(var i = 0; i < bestMatches.length; i++) { %>
+    Symbol: 
+    <form action="/stockDataResults" method="post">
+        <button type="submit" name="symbol" value="<%=bestMatches[i]["1. symbol"]%>" class="btn-link"><%=bestMatches[i]["1. symbol"]%></button>
+    </form>
+    Name: <%=bestMatches[i]["2. name"]%><br><br>
+      <% } %>
+  <a href="/">Go back</a>
+
+  <%- include('partials/footer') %>

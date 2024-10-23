@@ -1,0 +1,32 @@
+<header>
+    <div id="topBar">
+        <div id="scroogeLogo">Scrooge McTrade</div>
+        <% if (session.userId >= 0) { %>
+            <div id="userInfo"><span id="user_name"></span> | Account Number: <span id="account_number"></span> | <a href="/userLogout">Log Out</a></div>
+        <% } else { %>
+            <div id="userInfo"><a href="/userLogin">Sign In</a> | <a href="/userRegister">Register</a></div>
+    <% } %>
+    </div>
+    <nav>
+        <div class="menu">
+            <div id="tableView" class="buttonLike"><a href="/tableview">Positions</a></div>
+            <div id="transactStock" class="buttonLike"><a href="/transactStock">Transact Stock</a></div>
+            <div id="depositWithdraw" class="buttonLike"><a href="/depositWithdraw">Deposit/Withdraw</a></div>
+            <div id="transactionLog" class="buttonLike"><a href="/transactionLog">Transaction History</a></div>
+            <div id="searchBar">
+                    <form action="/altStockSearchResults" id="searchForm">Search:
+                        <input type="text" name="searchInput" id="searchInput" placeholder="Enter a stock symbol" required>
+                        <button type="button" id="searchButton">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div><span id="testButton"><b></b></div>
+        </div>
+        <div id="searchModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header"><button id="modalClose" style="float: right">X</button><span id="searchHeading"></span></div>
+                <div class="modal-body"></div>
+            </div>
+        </div>
+    </nav>
+</header>

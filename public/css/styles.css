@@ -1,0 +1,452 @@
+html {
+  width: 100%;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  y-overflow: auto;
+  margin: 0px !important;
+  width: 100%;
+  display: inline-block;
+}
+
+header {
+  width: 100%
+}
+
+nav {
+  width: 100%;
+}
+
+div.menu {
+  display: flex;
+  flex-direction: row; 
+  justify-content: left;
+  flex-wrap: wrap;
+  background-color: #f0fff0;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #f5fff5;
+}
+
+div.baseFrame {
+  display: flex;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #a3a3a3;
+}
+
+div.standardFrame {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #a3a3a3;
+}
+
+div.columnFrame {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #a3a3a3;
+}
+
+div.centeredFrame {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #a3a3a3;
+  text-align: center;
+  align-items: center;
+}
+
+div.halfFrame {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #a3a3a3;
+  width: 50%;
+}
+
+div.halfColumnFrame {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #a3a3a3;
+  width: 50%;
+}
+
+div.frameElement {
+  padding-inline: 30px;
+  font-size: 1em;
+}
+
+div.frameElementCentered {
+  text-align: center;
+  width: 100%;
+}
+
+div.halfFrame form {
+  width: 100%;
+}
+
+div select {
+  font-style: inherit;
+  font-size: 1em;
+}
+
+#welcomeMessage {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#searchMessage {
+  font-size: 1.5em;
+}
+
+div.inline {
+  display: flex;
+  flex-direction: row;
+}
+
+div.tableContainer {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #a3a3a3;
+  width: fit-content;
+}
+
+div.buttonLike {
+  background-color: #c4f4e5;
+  border-inline: 1px solid #959595;
+  min-width: 150px;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+div.buttonLike:hover {
+  background-color: #74e0b5;
+}
+
+div.buttonLike a {
+  text-decoration: none;
+  color: #353535;
+}
+
+#searchBar {
+  padding-left: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: .8em;
+}
+
+#topBar {
+  background: linear-gradient(0.25turn, #3fa687, #ebf8e1, #ffffff);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+
+#scroogeLogo {
+  font-size: 2em;
+  font-family: "Tahoma", sans-serif;
+  color: white;
+  min-width: 40%;
+}
+
+#userInfo {
+  font-size: .8em;
+}
+
+#userInfo a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #124012
+}
+
+#submitButton {
+  margin-top: 8px;
+}
+
+button.btn-link {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  color: #0000EE;
+  padding: 0;
+  text-decoration: underline;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+span.daily {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+span.label {
+  font-weight: bold;
+}
+
+#stockHeader {
+  background-color: #353535;
+  color: white;
+  text-align: center;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+}
+
+#stockInfo {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  flex-wrap: nowrap;
+}
+
+div.stockDay {
+
+}
+
+table.standard {
+  border-radius: 2px;
+  border-collapse: collapse;
+}
+
+tr.t_headers {
+  background-color: #353535;
+  color: white;
+  font-weight: bold;
+  min-width: auto;
+  max-width: auto;
+}
+
+td {
+  padding: 4px;
+  border: 1px solid black;
+}
+
+span.dollar {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+span.dollarBlack {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+td.dollar, td.dollarBlack, td.percentage{
+  text-align: right;
+}
+
+.dollar::before{
+  content: '$';
+}
+
+.dollarBlack::before{
+  content: '$';
+}
+
+td.percentage::after{
+  content: '%';
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+div.localFrame {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+}
+
+div.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+#headerStockInfo {
+}
+
+#headerBuySell {
+}
+
+div.stockInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 5px;
+  padding-bottom: 10px;
+}
+
+#chartHolderOuter {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding: 10px;
+  width: 80%;
+  border: 1px solid #a3a3a3;
+}
+
+#chart {
+  width: 100%;
+  height: 100%;
+  background-color: white !important;
+  paddig: 4px;
+}
+
+#stockInfoSymbol {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#stockInfoCompanyName {
+  font-size: 1.3em;
+}
+
+span.stockInfoText {
+  font-weight: bold;
+}
+
+button.buy {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.1em;
+  font-family: inherit;
+  margin-right: 10px;
+  margin-left: 80px;
+}
+
+button.sell {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.1em;
+  font-family: inherit;
+}
+
+button.buy:hover {
+  background-color: darkgreen;
+}
+
+button.sell:hover {
+  background-color: darkred;
+}
+
+#chartButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#chartButtons button {
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  background-color: #f2f2f2;
+}
+
+#chartButtons button:hover {
+  background-color: #c2c2c2;
+  font-weight: bold;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.35);
+  z-index: 1
+}
+
+.modal-content {
+  /* display: none; */
+  margin: 10% auto;
+  width: 60%;
+  /* border: 1px solid black; */
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  padding-top: 10px;
+}
+
+.formRow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.formLabel {
+  text-align: right;
+  width: 140px;
+  margin-right: 10px;
+}
+
+.formInput {
+  margin-left: 10px;
+  width: 200px;
+  text-align: left;
+}
+
+.error {
+  color: red;
+}
+
+footer {
+  height: 50px;
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(0.25turn, #3fa687, #ebf8e1, #ffffff);
+}

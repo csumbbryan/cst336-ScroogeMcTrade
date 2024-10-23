@@ -1,0 +1,20 @@
+{
+  "files": {
+    "dbaccess.js": [
+      {
+        "id": "8e797064-0b4e-45c0-b865-a12ac61a67c3",
+        "line": 179,
+        "version": 1,
+        "index": 6119
+      }
+    ],
+    "index.js": [
+      {
+        "id": "9bdb4cce-b08e-493b-b10b-2080cab3d912",
+        "line": 398,
+        "version": 1,
+        "index": 11875
+      }
+    ]
+  }
+}

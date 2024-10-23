@@ -1,0 +1,50 @@
+<%- include('partials/header') %>
+  <div class="halfFrame" id="accountBalance">
+    <div class="frameElementCentered">Current Account Balance: <br> <span class="dollarBlack"><%=balance%></div></span>
+  </div>
+  
+  
+  <div class="halfFrame">
+  <form action="/confirmation" id="form">
+    <div class="frameElementCentered">
+    <select name="transactType">
+      <option name="buy" value="buy">
+        Buy
+      </option>
+      <% if (typeof transactType != "undefined" && transactType == "sell") {%>
+        <option name="sell" value="sell" selected>
+          Sell
+        </option>
+      <% } else { %> 
+        <option name="sell" value="sell">
+          Sell
+        </option>
+      <% } %>
+      
+      
+    </select>
+      </div><br>
+    <% if (typeof symbol=="undefined" ) { %>
+      Stock Symbol: <input size="9" id="symbol" name="symbol" placeholder="Stock Symbol"></input><br>
+    <% } else { %>
+      Stock Symbol: <input size="9" id="symbol" name="symbol" value="<%=symbol%>"></input><br>
+    <% } %>
+    Number of Shares: <input size="12" id="qty" name="transactionQty" placeholder="Number of Shares"></input><br>
+    Current Price: <input size="10" id="currentPrice" name="currentPrice" placeholder="Select a stock" readonly></input><br>
+    <div class="frameElementCentered">
+      <button type="button" id="submitButton">Submit</button>
+    </div>
+  </form>
+  </div>
+  <br>
+  <div id="transactError">
+    <h2>
+      <% if (typeof error !="undefined" ) { %>
+        <%= error %>
+      <% } %>
+    </h2>
+  </div>
+  <br>
+
+  <script src="/js/transact.js"></script>
+  <%- include('partials/footer') %>

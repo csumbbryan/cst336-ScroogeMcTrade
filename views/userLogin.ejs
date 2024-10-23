@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+	<div class="halfFrame">
+		<div class="frameElementCentered">
+			<h3>Sign in:</h3>
+			<form method="post" action="/userLogin">
+				<% let name = ""; %>
+				<% if (typeof username != "undefined") name = username; %>
+				<div class="formRow">
+					<div class="formLabel">Username:</div>
+					<input name="userName" class="formInput" id="userName" value="<%= name %>"></input>
+				</div>
+				<div class="formRow">
+					<div class="formLabel">Password:</div>
+					<input name="pw" class="formInput" id="pw" type="password"></input>
+				</div>
+				<button name="submit">Sign In</button>
+				<% if (typeof error != "undefined") { %>
+					<div class="error"><%= error %></div>
+				<% } %>
+			</form>
+			<br>
+			<a href="/userRegister">Don't have an account?</a>
+		</div>
+	</div>
+<%- include('partials/footer') %>

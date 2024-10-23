@@ -1,0 +1,52 @@
+<%- include('partials/headerBillboard') %>
+  <!-- Update the below to show single Day Values for current day -->
+  <div class="columnFrame">
+    <div class="header">
+      <div id="headerStockInfo">
+        <span id="stockInfoCompanyName"><%=stockInfo["Name"]%>   </span>
+        <span id="stockInfoSymbol"><%=stockData["01. symbol"]%></span> 
+        <%=stockData["10. change percent"]%>
+          <% if (changeDaily > 0) { %>
+            <img src="/img/green_up_circle.png" width="15px">
+          <% } else { %>
+            <img src="/img/red_down_circle.png" width="15px">
+            <% } %>
+      </div>
+      <div id="headerBuySell">
+        <form method="post" action="/transactStock">
+          <input type="hidden" name="symbol" value='<%=stockData["01. symbol"]%>'>
+          <button class="buy" name="transactType" value="buy">Buy</button>
+          <button class="sell" name="transactType" value="sell">Sell</button>
+        </form>
+      </div>
+    </div>
+    <div class="stockInfo">
+      <div class="stockInfoCurrent">
+        <span class="stockInfoText">Current Price:</span> <%=formatCurrency(stockData["05. price"])%><br>
+        <span class="stockInfoText">Open:</span> <%=formatCurrency(stockData["02. open"])%><br>
+        <span class="stockInfoText">Previous Close:</span> <%=formatCurrency(stockData["08. previous close"])%><br>
+      </div>
+      <div class="stockInfoRange">
+        <span class="stockInfoText">Day Range:</span> <%=formatCurrency(stockData["04. low"])%> - <%=formatCurrency(stockData["03. high"])%><br>
+        <span class="stockInfoText">52 Week Range:</span> <%=formatCurrency(stockInfo["52WeekLow"])%> - <%=formatCurrency(stockInfo["52WeekHigh"])%><br>
+      </div>
+    </div>
+    </div>
+    
+    <div id="chartHolderOuter">
+      <div id="chartHolderInner">
+        <div id="chartButtons">
+          <span id="chartTerm" hidden><%=term%></span>
+          <form action="/stockDataResults" method="post">
+            <input type="hidden" name="symbol" value="<%=symbol%>"></input>
+            <button type="submit" id="day" name="term" value="day">Daily</button>
+            <button type="submit" id="week" name="term" value="week">Weekly</button>
+            <button type="submit" id="month" name="term" value="month">Monthly</button>
+            <button type="submit" id="year" name="term" value="year">Yearly</button>
+          </form>
+        </div>
+      <div id="chart"></div>
+    </div>
+
+          <script src = "/js/chart.js"></script>
+  <%- include('partials/footer') %>

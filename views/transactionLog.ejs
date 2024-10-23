@@ -1,0 +1,25 @@
+
+<%- include('partials/header') %>
+<body>
+  <div class="standardFrame">
+    <div class="frameElementCentered"><h3>Transaction History</h3></div>
+    <div class="frameElementCentered">
+      <input type="radio" name="transactionType" id="accountRadio" value="account" checked>
+      <label for="accountRadio">Account Transactions</label>
+      <input type="radio" name="transactionType" id="stockRadio" value="stock">
+      <label for="stockRadio">Stock Transactions</label>
+    </div>
+  </div>
+  
+  
+  <div id="logTable" class="tableContainer">
+    <table class="standard">
+      <tr class="t_headers">
+        <td>Transaction type</td><td>Date</td><td>Amount</td><td>Resulting balance</td>
+      </tr>
+    </table>
+  </div>
+  
+
+<script src="/js/transactionLog.js"></script>
+<%- include('partials/footer') %>

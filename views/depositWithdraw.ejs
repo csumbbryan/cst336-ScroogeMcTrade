@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+  <div class="halfFrame" id="accountBalance">
+    <div class="frameElementCentered">Current Account Balance: <br> <span class="dollarBlack" id="balance">
+      <%=formatCurrency(account.balance)%></div></span>
+  </div>
+  <div class="halfFrame">
+  <form method="post" action="/depositWithdraw" id="form">
+    <div class="frameElementCentered"><input type="radio" name="transactType" id="depositRadio" value="D" checked>Deposit</input>
+    <input type="radio" name="transactType" id="withdrawRadio" value="W">Withdraw</input>
+    </div><br>
+    <div class="frameElementCentered">
+      Amount: <input id="amount" name="transferAmount" placeholder="Amount to transfer"></input>
+    </div>
+  <div class="frameElementCentered">
+    <button type="button" id="submitButton">Submit</button>
+    <div class="error"></div>
+  </div>
+    
+  </form>
+  </div>
+  <script src="/js/depositWithdraw.js"></script>
+<%- include('partials/footer') %>
